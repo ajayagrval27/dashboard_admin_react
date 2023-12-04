@@ -1,0 +1,42 @@
+.profile-container {
+	width: 100% !important;
+}
+.profile-content {
+	margin: 1rem;
+}
+.css-kjirbw-MuiButtonBase-root-MuiButton-root {
+	min-width: 60px !important;
+	padding: 3px 8px !important;
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+	max-width: 930px !important;
+}
+p {
+	margin-bottom: 0;
+}
+.css-1ndpvdd-MuiTableCell-root {
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 600 !important;
+	font-size: 0.9rem !important;
+}
+.css-1ygcj2i-MuiTableCell-root {
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 600 !important;
+	font-size: 0.9rem !important;
+}
+.css-1ex1afd-MuiTableCell-root {
+	padding: 12px !important;
+}
+.form-control {
+	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+	display: inline-block;
+	padding: 0.85rem 0.75rem;
+}
+.form-control:focus {
+	color: var(--bs-body-color);
+	background-color: var(--bs-body-bg);
+	border-color: #86b7fe;
+	border-width: 1px;
+	outline: 0;
+	box-shadow: none;
+}

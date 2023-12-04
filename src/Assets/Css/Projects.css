@@ -1,0 +1,26 @@
+.projects-container {
+	width: 100%;
+}
+.projects-content {
+	margin: 1rem;
+}
+.tables-cell-width {
+	width: 32%;
+}
+.inner-scrollbar {
+	--sb-track-color: #c4c2c2;
+	--sb-thumb-color: #9800ff;
+	--sb-size: 8px;
+	scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+.inner-scrollbar::-webkit-scrollbar {
+	width: var(--sb-size);
+}
+.inner-scrollbar::-webkit-scrollbar-track {
+	background: var(--sb-track-color);
+	border-radius: 8px;
+}
+.inner-scrollbar::-webkit-scrollbar-thumb {
+	background: var(--sb-thumb-color);
+	border-radius: 8px;
+}

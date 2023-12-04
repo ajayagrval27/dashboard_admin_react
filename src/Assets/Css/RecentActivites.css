@@ -1,0 +1,23 @@
+.recentActivites-container {
+	width: 100%;
+}
+.recentActivites-content {
+	margin: 1rem;
+}
+.css-dwuj3p-MuiTableCell-root {
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 600 !important;
+	font-size: 0.9rem !important;
+}
+.table-id-width {
+	width: 10%;
+}
+.table-date-width {
+	width: 25%;
+}
+.table-type-width {
+	width: 15%;
+}
+.table-title-width {
+	width: 25%;
+}

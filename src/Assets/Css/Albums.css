@@ -1,0 +1,15 @@
+.album-container {
+	width: 100%;
+}
+.album-content {
+	margin: 1rem;
+}
+.css-y8ay40-MuiTableCell-root {
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 600 !important;
+	font-size: 0.9rem !important;
+}
+/* sweet alert */
+body.swal2-toast-shown .swal2-container {
+	width: 385px !important;
+}

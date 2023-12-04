@@ -1,0 +1,54 @@
+.header {
+	/* width: 69.35rem !important; */
+	height: 4rem !important;
+	margin-bottom: 0.6rem;
+}
+.main-conatiner {
+	height: 100%;
+	display: flex;
+}
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+	box-shadow: none !important;
+	background-color: #f4f5fa !important;
+	justify-content: center !important;
+}
+.header-items {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 0.5rem;
+}
+.menus-items {
+	text-decoration: none;
+	color: black;
+	padding-right: 1.5rem;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover {
+	background-color: #c5a7fe !important;
+	transition: all 0.1s !important;
+}
+.css-l9sr4b-MuiBadge-root {
+	margin-right: 16px !important;
+}
+.css-vpkae3 {
+	padding-top: 16px !important;
+	padding-bottom: 24px !important;
+	padding-left: 15px !important;
+	padding-right: 0px !important;
+}
+.css-5f9ccf {
+	padding: 8px 20px !important;
+}
+.css-mtv83c {
+	margin-left: 15px !important;
+}
+.css-16a9ube-MuiButtonBase-root-MuiMenuItem-root {
+	font-size: 0.95rem !important;
+}
+.search-bar {
+	margin: 0 15px !important;
+}
+/* .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+	top: 40px !important;
+	left: 1120px !important;
+} */

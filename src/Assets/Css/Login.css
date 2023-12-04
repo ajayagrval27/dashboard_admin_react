@@ -1,0 +1,104 @@
+.login-container {
+	height: 100vh;
+}
+.login-content {
+	min-height: 100vh;
+	overflow-x: hidden;
+	position: relative;
+}
+.content-center {
+	display: flex;
+	min-height: 100vh;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding: 1.25rem;
+}
+.content-center .trre1 {
+	left: 0;
+	bottom: 0;
+	position: absolute;
+}
+.content-center .mask {
+	bottom: 0;
+	z-index: -1;
+	width: 100%;
+	position: absolute;
+}
+.content-center .tree2 {
+	right: 0;
+	bottom: 0;
+	position: absolute;
+}
+.login-form {
+	background-color: #fff;
+	color: rgba(58, 53, 65, 0.87);
+	transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	border-radius: 6px;
+	box-shadow: 0px 2px 1px -1px rgba(58, 53, 65, 0.2),
+		0px 1px 1px 0px rgba(58, 53, 65, 0.14),
+		0px 1px 3px 0px rgba(58, 53, 65, 0.12);
+	background-image: none;
+	overflow: hidden;
+	box-shadow: 0px 2px 10px 0px rgba(58, 53, 65, 0.1);
+	z-index: 1;
+}
+.form-content {
+	padding: 2.5rem 2.25rem 1.75rem !important;
+}
+.form-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    /* font-size: 1.6rem; */
+}
+.form-heading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.link-name {
+	text-decoration: none;
+	color: #7d4ac4;
+}
+.link-name:hover {
+	text-decoration: underline;
+	color: #7d4ac4;
+}
+.login-btn {
+	background-color: #7d4ac4 !important;
+	color: #fff;
+	font-weight: 600;
+}
+.login-field:focus {
+	border-color: #7d4ac4 !important;
+	box-shadow: 0 0 0 0.2rem rgba(125, 74, 196, 0.25) !important;
+}
+/* sing up  */
+.privacy-text {
+	text-decoration: none;
+	color: #7d4ac4;
+}
+.privacy-text:hover {
+	text-decoration: underline;
+}
+.css-lwrzkx-MuiButtonBase-root-MuiButton-root {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 15px 14px !important;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 15px 14px !important;
+}
+.roleId-select {
+	width: 10.5rem;
+}
+.mobile-field {
+	width: 12.5rem!important;
+}

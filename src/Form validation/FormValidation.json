@@ -1,0 +1,93 @@
+[
+	{
+		"name": "fullName",
+		"conditions": [
+			{
+				"condition": "userObj.fullName == 'undefined' || userObj.fullName == ''",
+				"error": "First name is required"
+			},
+			{
+				"condition": "!/^[A-Z a-z]+$/.test(userObj.fullName)",
+				"error": "First name should contain only alphabets"
+			}
+		]
+	},
+	{
+		"name": "email",
+		"conditions": [
+			{
+				"condition": "userObj.email == 'undefined' || userObj.email == ''",
+				"error": "Email is required"
+			},
+			{
+				"condition": "!(userObj.email.includes('@gmail') || userObj.email.includes('@outlook'))",
+				"error": "Email should be either gmail or outlook"
+			}
+		]
+	},
+	{
+		"name": "password",
+		"conditions": [
+			{
+				"condition": "userObj.password == 'undefined' || userObj.password == ''",
+				"error": "Password is required"
+			},
+			{
+				"condition": "userObj.password.length < 3",
+				"error": "Password should be more than 3 characters"
+			},
+			{
+				"condition": "userObj.password === userObj.confirmPassword",
+				"otherField": "confirmPassword"
+			},
+			{
+				"condition": "userObj.password !== userObj.confirmPassword && userObj.confirmPassword !== ''",
+				"error": "Password and confirm password should be same",
+				"otherField": "confirmPassword"
+			}
+		]
+	},
+	{
+		"name": "confirmPassword",
+		"conditions": [
+			{
+				"condition": "userObj.confirmPassword == 'undefined' || userObj.confirmPassword == ''",
+				"error": "Confirm password is required"
+			},
+			{
+				"condition": "userObj.password !== userObj.confirmPassword",
+				"error": "Password and confirm password should be same"
+			},
+			{
+				"condition": "userObj.confirmPassword.length < 3",
+				"error": "Confirm password should be more than 3 characters"
+			}
+		]
+	},
+	{
+		"name": "mobileNumber",
+		"conditions": [
+			{
+				"condition": "userObj.mobileNumber == 'undefined' || userObj.mobileNumber == ''",
+				"error": "Mobile number is required"
+			},
+			{
+				"condition": "!/^[0-9]+$/.test(userObj.mobileNumber)",
+				"error": "Mobile number should contain only numbers"
+			},
+			{
+				"condition": "userObj.mobileNumber.length !== 10",
+				"error": "Mobile number should be 10 digits"
+			}
+		]
+	},
+	{
+		"name": "roleId",
+		"conditions": [
+			{
+				"condition": "userObj.roleId == 'undefined' || userObj.roleId == ''",
+				"error": "RoleId is required"
+			}
+		]
+	}
+]

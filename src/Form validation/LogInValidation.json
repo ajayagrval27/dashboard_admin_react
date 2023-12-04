@@ -1,0 +1,25 @@
+[
+	{
+		"name": "email",
+		"conditions": [
+			{
+				"condition": "logInObj.email == 'undefined' || logInObj.email == ''",
+				"error": "Email is required"
+			},
+			{
+				"condition": "!(logInObj.email.includes('@gmail') || logInObj.email.includes('@outlook'))",
+				"error": "Email should be either gmail or outlook"
+			}
+		]
+	},
+	{
+		"name": "password",
+		"conditions": [
+			{
+				"condition": "logInObj.password == 'undefined' || logInObj.password == ''",
+				"error": "Password is required"
+			},
+			{}
+		]
+	}
+]
