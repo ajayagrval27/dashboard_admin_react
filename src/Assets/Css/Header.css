@@ -3,6 +3,10 @@
 	height: 4rem !important;
 	margin-bottom: 0.6rem;
 }
+.css-1x7skt0 {
+	box-shadow: none !important;
+	background-color: rgb(25, 118, 210);
+}
 .main-conatiner {
 	height: 100%;
 	display: flex;

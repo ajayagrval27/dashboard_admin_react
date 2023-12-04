@@ -317,13 +317,13 @@ const Dashboard = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ type:'tween', stiffness: 300 }}
+						transition={{ type: 'tween', stiffness: 300 }}
 						className="dashboard-content"
 					>
 						{/* tropy section */}
 						<Card
-							className="box_shadow"
-							sx={{ position: 'relative' }}
+							className="box_shadow trophyCard"
+							sx={{ position: 'relative'}}
 						>
 							<CardContent>
 								<Typography variant="h6">
