@@ -39,19 +39,19 @@
 	height: fit-content;
 }
 .css-syod95 {
-	margin-bottom: 2rem !important;
-}
-.css-86sh3a-MuiTypography-root {
-	margin-bottom: 2rem !important;
-}
-.css-1j0lzlv {
-	margin-bottom: 2rem !important;
+	margin-bottom: 2.02rem !important;
 }
 .css-18e9tgw-MuiAvatar-root {
 	background-color: rgba(58, 53, 65, 0.04) !important;
 }
+.css-86sh3a-MuiTypography-root {
+	margin-bottom: 2.02rem !important;
+}
 .box_shadow {
 	box-shadow: 0px 2px 10px 0px rgba(58, 53, 65, 0.1) !important;
+}
+.css-1j0lzlv {
+	margin-bottom: 2.02rem !important;
 }
 .css-1j29q8q {
 	margin-bottom: 1.09rem !important;
@@ -80,4 +80,10 @@
 }
 .css-1tajgh2-MuiDivider-root {
 	border-right: 1px solid rgba(116, 2, 255, 0.781) !important;
+}
+.css-eo2v5s {
+	margin: 0px 0px 31px !important;
+}
+.weeklyOverview__progress {
+	margin-bottom: 1.75rem !important;
 }

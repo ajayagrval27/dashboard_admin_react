@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import '../Assets/Css/Login.css'
 import tree1 from '../Assets/Images/auth-v1-tree.png'
 import tree2 from '../Assets/Images/auth-v1-tree-2.png'
@@ -21,6 +21,7 @@ import { motion } from 'framer-motion'
 // ** Icons Imports
 import { InputAdornment, IconButton } from '@mui/material'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
+// import { useSelector } from 'react-redux'
 
 const Login = () => {
 	const theme = useTheme()
@@ -59,6 +60,10 @@ const Login = () => {
 		setErrorObj({ ...errorObj })
 	}
 
+	// const handleSubmit = () => {
+	// 	dispatch(login(logInObj))
+	// }
+
 	const logInSubmit = () => {
 		Object.keys(logInObj).forEach((x) => {
 			validationFn(x)
@@ -81,7 +86,11 @@ const Login = () => {
 						<motion.div
 							initial={{ opacity: 0, y: 30 }}
 							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5 }}
+							transition={{
+								type: 'spring',
+								stiffness: 150,
+								duration: 0.5,
+							}}
 							className="login-form"
 						>
 							<div className="form-content">
@@ -293,6 +302,7 @@ const Login = () => {
 								</Box>
 								<Button
 									className="login-btn"
+									type="button"
 									size="large"
 									variant="contained"
 									color="primary"

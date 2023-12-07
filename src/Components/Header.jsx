@@ -40,7 +40,10 @@ function Header() {
 			toast: true,
 		}).then((result) => {
 			if (result.isConfirmed) {
+				localStorage.removeItem('isLoggedIn')
 				localStorage.removeItem('token')
+				localStorage.removeItem('userName')
+				localStorage.removeItem('id')
 				Swal.fire({
 					title: 'Logged Out',
 					text: 'You have been logged out.',
@@ -51,6 +54,11 @@ function Header() {
 			}
 		})
 	}
+
+	// const handleLogout = () => {
+	// 	dispatch(logout())
+	// }
+
 	const [anchorEl, setAnchorEl] = useState(null)
 
 	const handleDropdownOpen = (event) => {
@@ -213,7 +221,11 @@ function Header() {
 							</Box>
 						</MenuItem>
 						<Divider />
-						<MenuItem sx={{ p: 0 }} onClick={logOut}>
+						<MenuItem
+							sx={{ p: 0 }}
+							onClick={logOut}
+							// onClick={handleLogout}
+						>
 							<Box sx={styles}>
 								<MdLogout style={{ marginRight: '0.5rem' }} />
 								Log Out

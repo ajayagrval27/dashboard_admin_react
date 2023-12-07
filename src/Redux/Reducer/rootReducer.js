@@ -8,6 +8,7 @@ import { recActivitesReducer } from './recActivitesReducer'
 import { albumsReducer } from './albumsReducer'
 import { proDetailReducer } from './proDetailReducer'
 import { changePassReducer } from './changePassReducer'
+// import authReducer from './authReducer'
 
 export const rootReducer = combineReducers({
 	api: apiReducer,
@@ -19,4 +20,5 @@ export const rootReducer = combineReducers({
 	albumsData: albumsReducer,
 	profileDetail: proDetailReducer,
 	chandePassword: changePassReducer,
+	// auth: authReducer,
 })

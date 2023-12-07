@@ -157,6 +157,7 @@ const Profile = () => {
 
 	const handleClose = () => {
 		setOpen(false)
+		setProfileObj({ ...blankObj })
 	}
 	// ** table Pagination
 	const handleChangePage = (event, newPage) => {
@@ -278,7 +279,11 @@ const Profile = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5 }}
+						transition={{
+							type: 'spring',
+							stiffness: 150,
+							duration: 0.5,
+						}}
 						className="profile-content"
 					>
 						<Button

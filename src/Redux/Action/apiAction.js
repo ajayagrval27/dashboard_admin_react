@@ -47,7 +47,7 @@ export const createApiData = (userObj) => {
 			},
 		],
 	}
-	console.log(userObj);
+	console.log(userObj)
 
 	return (dispatch) => {
 		axios

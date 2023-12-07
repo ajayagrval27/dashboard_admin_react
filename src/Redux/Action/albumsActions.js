@@ -48,6 +48,7 @@ export const createAlbum = (albumObj) => {
 			trackId: 0,
 		},
 	]
+	console.log(albumObj)
 	return (dispatch) => {
 		axios
 			.post(
@@ -62,29 +63,9 @@ export const createAlbum = (albumObj) => {
 }
 
 export const updateAlbum = (editObj) => {
-	editObj.albumArtworkAssociates = [
-		{
-			albumArtworkId: 0,
-			albumId: 0,
-			artworkBase64: 'string',
-			artworkIndex: 0,
-		},
-	]
-	editObj.albumCostAssociates = [
-		{
-			albumCostId: 0,
-			albumId: 0,
-			costDetails: 'string',
-			costFees: 0,
-		},
-	]
-	editObj.albumTrackAssociates = [
-		{
-			albumTrackId: 0,
-			albumId: 0,
-			trackId: 0,
-		},
-	]
+	editObj.albumArtworkAssociates = []
+	editObj.albumCostAssociates = []
+	editObj.albumTrackAssociates = []
 	console.log(editObj)
 	return (dispatch) => {
 		axios

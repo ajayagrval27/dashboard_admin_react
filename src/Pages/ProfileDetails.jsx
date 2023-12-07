@@ -73,7 +73,11 @@ export const TabAccount = () => {
 			<motion.form
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}
+				transition={{
+					type: 'spring',
+					stiffness: 150,
+					duration: 0.5,
+				}}
 			>
 				<Grid container spacing={4}>
 					<Grid item xs={12} sm={6}>
@@ -182,7 +186,11 @@ const TabSecurity = () => {
 			<motion.form
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}
+				transition={{
+					type: 'spring',
+					stiffness: 150,
+					duration: 0.5,
+				}}
 			>
 				<CardContent sx={{ paddingBottom: 0 }}>
 					<Grid container spacing={3}>
@@ -371,7 +379,11 @@ const ProfileDetails = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5 }}
+						transition={{
+							type: 'spring',
+							stiffness: 150,
+							duration: 0.5,
+						}}
 						className="profileDetails-content"
 					>
 						<Card>

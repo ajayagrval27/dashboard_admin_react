@@ -105,6 +105,14 @@ const renderStats = () => {
 
 const Dashboard = () => {
 	const theme = useTheme()
+	// const isLoggedIn = localStorage.getItem('isLoggedIn')
+	// const dispatch = useDispatch()
+	// useEffect(() => {
+	// 	if (!isLoggedIn) {
+	// 		dispatch(logout())
+	// 	}
+	// }, [isLoggedIn, dispatch])
+
 	const options = {
 		chart: {
 			parentHeightOffset: 0,
@@ -317,13 +325,17 @@ const Dashboard = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ type: 'tween', stiffness: 300 }}
+						transition={{
+							type: 'spring',
+							stiffness: 150,
+							duration: 0.5,
+						}}
 						className="dashboard-content"
 					>
 						{/* tropy section */}
 						<Card
 							className="box_shadow trophyCard"
-							sx={{ position: 'relative'}}
+							sx={{ position: 'relative' }}
 						>
 							<CardContent>
 								<Typography variant="h6">
@@ -449,6 +461,7 @@ const Dashboard = () => {
 									]}
 								/> */}
 								<Box
+									className="weeklyOverview__progress"
 									sx={{
 										mb: 7,
 										display: 'flex',

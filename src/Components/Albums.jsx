@@ -47,6 +47,8 @@ const Albums = () => {
 		dispatch(getAlbumsData())
 	}, [dispatch])
 
+	console.log(albumsData)
+
 	const handleOpen = () => {
 		setOpen(true)
 	}
@@ -140,7 +142,11 @@ const Albums = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5 }}
+						transition={{
+							type: 'spring',
+							stiffness: 150,
+							duration: 0.5,
+						}}
 						className="album-content"
 					>
 						{/* form */}
@@ -247,7 +253,7 @@ const Albums = () => {
 										label="Filler2"
 										name="filler2"
 										onChange={addData}
-										value={albumObj.filler1 ?? ''}
+										value={albumObj.filler2 ?? ''}
 										type="text"
 										variant="outlined"
 									/>

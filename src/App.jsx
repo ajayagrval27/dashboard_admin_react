@@ -13,10 +13,13 @@ import { useEffect } from 'react'
 import { getApiData } from './Redux/Action/apiAction'
 import { getProfileData } from './Redux/Action/profileAction'
 import ProfileDetails from './Pages/ProfileDetails'
+// new routes
+// import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom'
 
 function App() {
 	const dispatch = useDispatch()
-	const isLogIn = localStorage.getItem('token') ?? false
+	// const isLoggedIn = localStorage.getItem('token') ?? false
+	const isLoggedIn = localStorage.getItem('token') ? true : false
 
 	useEffect(() => {
 		if (localStorage.getItem('token')) {
@@ -25,11 +28,15 @@ function App() {
 		}
 	}, [dispatch])
 
+	// const { isLoggedIn } = useSelector((state) => state.auth)
+	// const isLoggedIn = localStorage.getItem('token') ?? false
+	// console.log(isLoggedIn)
+
 	return (
 		<>
 			<BrowserRouter>
 				<Routes>
-					{isLogIn ? (
+					{isLoggedIn ? (
 						<>
 							<Route
 								path="/"
@@ -60,6 +67,33 @@ function App() {
 					<Route path="/signup" element={<SingUp />} />
 				</Routes>
 			</BrowserRouter>
+
+			{/* <BrowserRouter>
+				<Routes>
+					<Route element={<PrivateRoutes />}>
+						<Route
+							exact
+							path="/"
+							element={<Navigate to="/dashboard" />}
+						/>
+						<Route path="/dashboard" element={<Dashboard />} />
+						<Route path="/profile" element={<Profile />} />
+						<Route path="/project" element={<Project />} />
+						<Route path="/albums" element={<Albums />} />
+						<Route
+							path="/recentActivites"
+							element={<RecentActivites />}
+						/>
+						<Route
+							path="/profileDetail"
+							element={<ProfileDetails />}
+						/>
+					</Route>
+					<Route path="/" element={<Navigate to="/login" />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/signup" element={<SingUp />} />
+				</Routes>
+			</BrowserRouter> */}
 		</>
 	)
 }

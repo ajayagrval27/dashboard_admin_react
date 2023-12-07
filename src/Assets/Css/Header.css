@@ -1,19 +1,20 @@
 .header {
 	/* width: 69.35rem !important; */
 	height: 4rem !important;
-	margin-bottom: 0.6rem;
-}
-.css-1x7skt0 {
-	box-shadow: none !important;
-	background-color: rgb(25, 118, 210);
+	margin: 0.5rem 0;
 }
 .main-conatiner {
 	height: 100%;
 	display: flex;
 }
-.css-hip9hq-MuiPaper-root-MuiAppBar-root {
-	box-shadow: none !important;
+.css-1x7skt0 {
 	background-color: #f4f5fa !important;
+	justify-content: center !important;
+	box-shadow: none !important;
+}
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+	background-color: #f4f5fa !important;
+	box-shadow: none !important;
 	justify-content: center !important;
 }
 .header-items {
