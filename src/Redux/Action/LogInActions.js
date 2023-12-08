@@ -8,10 +8,10 @@ export const LogiInAcess = (obj, navigate) => {
 				'https://iris-api.mycodelibraries.com/api/User/LoginAuthenticate',
 				obj
 			)
-			.then((res) => {
+			.then(async (res) => {
 				const user = res.data
 				if (user.isSuccess === true) {
-					dispatch({
+					await dispatch({
 						type: 'LOGIN_SUCCESS',
 						payload: user.responseData,
 						isLoggedIn: true,
@@ -27,7 +27,7 @@ export const LogiInAcess = (obj, navigate) => {
 						showConfirmButton: false,
 						toast: true,
 						timerProgressBar: true,
-						timer: 1500,
+						timer: 1000,
 					}).then(() => {
 						navigate('/dashboard')
 					})
@@ -36,7 +36,12 @@ export const LogiInAcess = (obj, navigate) => {
 						type: 'LOGIN_FAIL',
 						payload: user.errorMessage,
 					})
-					alert(user.errorMessage)
+					Swal.fire({
+						icon: 'error',
+						title: user.errorMessage,
+						text: 'Something went wrong!',
+						toast: true,
+					})
 				}
 			})
 			.catch((error) => {
@@ -45,9 +50,33 @@ export const LogiInAcess = (obj, navigate) => {
 	}
 }
 
-export const logout = () => {
+export const logout = (navigate) => {
 	return (dispatch) => {
-		dispatch({ type: 'LOGOUT', payload: false })
+		Swal.fire({
+			title: 'Are you sure you want to log out?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			cancelButtonColor: '#3085d6',
+			confirmButtonColor: '#d33',
+			confirmButtonText: 'Yes Log Out!',
+			toast: true,
+		}).then((result) => {
+			if (result.isConfirmed) {
+				dispatch({ type: 'LOGOUT', payload: false, isLoggedIn: false })
+				localStorage.setItem('isLoggedIn', false)
+				localStorage.removeItem('token')
+				localStorage.removeItem('userName')
+				localStorage.removeItem('id')
+				Swal.fire({
+					title: 'Logged Out',
+					text: 'You have been logged out.',
+					icon: 'success',
+					toast: true,
+				})
+				navigate('/login')
+			}
+		})
 	}
 }
 

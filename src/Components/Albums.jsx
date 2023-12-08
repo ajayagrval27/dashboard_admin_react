@@ -47,8 +47,6 @@ const Albums = () => {
 		dispatch(getAlbumsData())
 	}, [dispatch])
 
-	console.log(albumsData)
-
 	const handleOpen = () => {
 		setOpen(true)
 	}

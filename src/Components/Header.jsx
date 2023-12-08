@@ -14,8 +14,9 @@ import { IoHelpCircleOutline } from 'react-icons/io5'
 import { MdLogout } from 'react-icons/md'
 import { TextField, InputAdornment } from '@mui/material'
 import { FaMagnifyingGlass } from 'react-icons/fa6'
-import Swal from 'sweetalert2'
 import { BiSolidUserDetail } from 'react-icons/bi'
+import { useDispatch } from 'react-redux'
+import { logout } from '../Redux/Action/LogInActions'
 
 const BadgeContentSpan = styled('span')(({ theme }) => ({
 	width: 8,
@@ -27,37 +28,11 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
 
 function Header() {
 	const navigate = useNavigate()
+	const dispatch = useDispatch()
 
 	const logOut = () => {
-		Swal.fire({
-			title: 'Are you sure you want to log out?',
-			text: "You won't be able to revert this!",
-			icon: 'warning',
-			showCancelButton: true,
-			cancelButtonColor: '#3085d6',
-			confirmButtonColor: '#d33',
-			confirmButtonText: 'Yes Log Out!',
-			toast: true,
-		}).then((result) => {
-			if (result.isConfirmed) {
-				localStorage.removeItem('isLoggedIn')
-				localStorage.removeItem('token')
-				localStorage.removeItem('userName')
-				localStorage.removeItem('id')
-				Swal.fire({
-					title: 'Logged Out',
-					text: 'You have been logged out.',
-					icon: 'success',
-					toast: true,
-				})
-				navigate('/login')
-			}
-		})
+		dispatch(logout(navigate))
 	}
-
-	// const handleLogout = () => {
-	// 	dispatch(logout())
-	// }
 
 	const [anchorEl, setAnchorEl] = useState(null)
 
@@ -221,11 +196,7 @@ function Header() {
 							</Box>
 						</MenuItem>
 						<Divider />
-						<MenuItem
-							sx={{ p: 0 }}
-							onClick={logOut}
-							// onClick={handleLogout}
-						>
+						<MenuItem sx={{ p: 0 }} onClick={logOut}>
 							<Box sx={styles}>
 								<MdLogout style={{ marginRight: '0.5rem' }} />
 								Log Out
@@ -237,4 +208,5 @@ function Header() {
 		</>
 	)
 }
+
 export default Header

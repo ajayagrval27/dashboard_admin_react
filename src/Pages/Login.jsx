@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Assets/Css/Login.css'
 import tree1 from '../Assets/Images/auth-v1-tree.png'
 import tree2 from '../Assets/Images/auth-v1-tree-2.png'
@@ -36,6 +36,9 @@ const Login = () => {
 	let [errorObj, setErrorObj] = useState({})
 	const [isVisible, setIsVisible] = useState(false)
 	const handleTogglePassword = () => setIsVisible(!isVisible)
+
+	// const isLoggedIn = localStorage.getItem('token') ? true : false
+	// console.log(isLoggedIn)
 
 	useEffect(() => {
 		if (logInObj.email) {
