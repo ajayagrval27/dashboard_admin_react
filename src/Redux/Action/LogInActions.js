@@ -68,6 +68,7 @@ export const logout = (navigate) => {
 				localStorage.removeItem('token')
 				localStorage.removeItem('userName')
 				localStorage.removeItem('id')
+				localStorage.removeItem('isLoggedIn')
 				Swal.fire({
 					title: 'Logged Out',
 					text: 'You have been logged out.',

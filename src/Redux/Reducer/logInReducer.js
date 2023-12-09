@@ -13,12 +13,13 @@
 
 import { LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT } from '../Type/type'
 
-console.log(JSON.parse(localStorage.getItem('isLoggedIn')))
+// console.log(JSON.parse(localStorage.getItem('isLoggedIn') === 'true') ?? false)
 
 const initialState = {
 	user: null,
 	isLoading: false,
-	isLoggedIn: JSON.parse(localStorage.getItem('isLoggedIn')),
+	isLoggedIn:
+		JSON.parse(localStorage.getItem('isLoggedIn') === 'true') ?? false,
 	// isLoggedIn: localStorage.getItem('token') ? true : false,
 	error: null,
 }

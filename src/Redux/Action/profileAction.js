@@ -49,20 +49,56 @@ export const createProfileData = (profileObj) => {
 }
 
 export const updateProfileData = (profileObj) => {
-	profileObj.bankDetails = profileObj.profileBankAssociateResponses
-	profileObj.role = [
-		{
-			profileRoleAssociateId: 0,
-			profileId: 0,
-			roleType: 1,
-		},
-	]
-	console.log(profileObj)
+	// profileObj.bankDetails.profileId = 0
+	// profileObj.bankDetails = [profileObj.bankDetails]
+	// delete profileObj.profileBankAssociateResponses
+	// delete profileObj.profileRoleAssociateResponses
+	// console.log(profileObj)
+
+	let a = {
+		id: profileObj.id,
+		displayName: profileObj.displayName,
+		birthdate: profileObj.birthdate,
+		email: profileObj.email,
+		idNumber: profileObj.idNumber,
+		address: profileObj.address,
+		bankDetails: [
+			{
+				profileBankAssociateId:
+					profileObj.bankDetails.profileBankAssociateId,
+				profileId: profileObj.bankDetails.profileId,
+				bankAddress: profileObj.bankDetails.bankAddress,
+				bankInfo: profileObj.bankDetails.bankInfo,
+				cardHolder: profileObj.bankDetails.cardHolder,
+				cardType: profileObj.bankDetails.cardType,
+				cardNo: profileObj.bankDetails.cardNo,
+				tel: profileObj.bankDetails.tel,
+			},
+		],
+		profileImageBase64: 'string',
+		role: [
+			{
+				profileRoleAssociateId: 0,
+				profileId: 0,
+				roleType: 1,
+			},
+		],
+		advanceType: profileObj.advanceType,
+		advanceAmount: profileObj.advanceAmount,
+		contractStartDate: profileObj.contractStartDate,
+		contractEndDate: profileObj.contractEndDate,
+		contractTotalMonths: profileObj.contractTotalMonths,
+		userId: profileObj.userId,
+		alternativeName: profileObj.alternativeName,
+		chineseName: profileObj.chineseName,
+		artistName: profileObj.artistName,
+	}
+
 	return (dispatch) => {
 		axios
 			.post(
 				'https://iris-api.mycodelibraries.com/api/Profile/UpdateProfile',
-				profileObj,
+				a,
 				auth
 			)
 			.then((res) => {

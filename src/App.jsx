@@ -22,7 +22,7 @@ function App() {
 	// const isLoggedIn = localStorage.getItem('token') ?? false
 	// const isLoggedIn = localStorage.getItem('isLoogedin') ?? false
 	const isLoggedIn = useSelector((state) => state.logIn.isLoggedIn)
-	console.log(isLoggedIn)
+	// console.log(isLoggedIn)
 
 	useEffect(() => {
 		if (localStorage.getItem('token')) {

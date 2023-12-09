@@ -185,11 +185,14 @@ const Profile = () => {
 
 	const editProfiles = (editObj) => {
 		editObj.bankDetails = editObj.profileBankAssociateResponses
+		editObj.role = editObj.profileRoleAssociateResponses
 		// editObj.bankDetails[0].profileId =
 		// 	editObj.bankDetails[0].profileBankAssociateId
 		// editObj.bankDetails = editObj.bankDetails[0]
 		// editObj.bankDetails.profileId =
 		// 	editObj.bankDetails.profileBankAssociateId
+		editObj.bankDetails = editObj.bankDetails.slice(0, 1)[0]
+		console.log(editObj)
 		setProfileObj({ ...editObj })
 	}
 
@@ -209,7 +212,6 @@ const Profile = () => {
 			setOpen(false)
 		} else {
 			dispatch(createProfileData(profileObj))
-			console.log(profileObj)
 			setProfileObj({ ...blankObj })
 			Swal.fire({
 				position: 'center',
@@ -432,23 +434,27 @@ const Profile = () => {
 									<DialogContentText>
 										Please enter bankDetails:
 									</DialogContentText>
-									{/* <TextField
-									label="ProfileBankAssociateId"
-									name="bankDetails.ProfileBankAssociateId"
-									type="number"
-									onChange={addData}
-									variant="outlined"
-								/> */}
 									<TextField
-										label="ProfileId"
+										label="profileId"
 										name="bankDetails.profileId"
 										type="number"
 										onChange={addData}
+										variant="outlined"
 										value={
 											profileObj.bankDetails?.profileId ??
 											''
 										}
+									/>
+									<TextField
+										label="ProfileBankAssociateId"
+										name="bankDetails.profileBankAssociateId"
+										type="number"
+										onChange={addData}
 										variant="outlined"
+										value={
+											profileObj.bankDetails
+												?.profileBankAssociateId ?? ''
+										}
 									/>
 									<TextField
 										label="BankAddress"
