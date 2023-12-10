@@ -185,11 +185,14 @@ const Profile = () => {
 
 	const editProfiles = (editObj) => {
 		editObj.bankDetails = editObj.profileBankAssociateResponses
+		editObj.role = editObj.profileRoleAssociateResponses
 		// editObj.bankDetails[0].profileId =
 		// 	editObj.bankDetails[0].profileBankAssociateId
 		// editObj.bankDetails = editObj.bankDetails[0]
 		// editObj.bankDetails.profileId =
 		// 	editObj.bankDetails.profileBankAssociateId
+		editObj.bankDetails = editObj.bankDetails.slice(0, 1)[0]
+		console.log(editObj)
 		setProfileObj({ ...editObj })
 	}
 
