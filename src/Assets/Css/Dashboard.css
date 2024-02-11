@@ -8,6 +8,7 @@
 .dashboard-content {
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 4.5rem;
 }
 .css-4ob670-MuiPaper-root-MuiCard-root {
 	margin-left: 1rem;
@@ -20,7 +21,7 @@
 .staticCard {
 	margin-left: 1rem;
 	margin-right: 1rem;
-	width: 44.85rem;
+	width: 44rem;
 }
 .trophyCard {
 	margin-left: 1rem;

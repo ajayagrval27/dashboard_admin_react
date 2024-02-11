@@ -26,7 +26,7 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
 	boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
 }))
 
-function Header() {
+function Header({ handleFilter, searchValue }) {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 
@@ -69,6 +69,9 @@ function Header() {
 						className="search-bar"
 						size="small"
 						sx={{ '& .MuiOutlinedInput-root': { borderRadius: 4 } }}
+						placeholder="Search"
+						value={searchValue}
+						onChange={(e) => handleFilter(e.target.value)}
 						InputProps={{
 							startAdornment: (
 								<InputAdornment position="start">

@@ -139,6 +139,8 @@ import { motion } from 'framer-motion'
 
 const Profile = () => {
 	let profileData = useSelector((state) => state.profileData)
+	const [filteredData, setFilteredData] = useState(profileData)
+	const [searchValue, setSearchValue] = useState('')
 	const dispatch = useDispatch()
 	// ** States
 	let [profileObj, setProfileObj] = useState({})
@@ -147,9 +149,21 @@ const Profile = () => {
 	const [page, setPage] = useState(0)
 	const [rowsPerPage, setRowsPerPage] = useState(10)
 
+	console.log(profileData, filteredData)
+
 	useEffect(() => {
 		dispatch(getProfileData())
 	}, [dispatch])
+
+	const handleFilter = (value) => {
+		console.log(value)
+		setSearchValue(value)
+		setFilteredData(
+			profileData.filter((data) =>
+				data?.displayName.toLowerCase().includes(value.toLowerCase())
+			)
+		)
+	}
 
 	const handleOpen = () => {
 		setOpen(true)
@@ -277,7 +291,10 @@ const Profile = () => {
 			<div className="main-container">
 				<SidebarMenus />
 				<div className="profile-container">
-					<Header />
+					<Header
+						searchValue={searchValue}
+						handleFilter={handleFilter}
+					/>
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -581,8 +598,8 @@ const Profile = () => {
 										</TableRow>
 									</TableHead>
 									<TableBody>
-										{Array.isArray(profileData)
-											? profileData
+										{Array.isArray(filteredData)
+											? filteredData
 													?.slice(
 														page * rowsPerPage,
 														page * rowsPerPage +

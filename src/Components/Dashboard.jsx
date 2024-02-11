@@ -652,7 +652,7 @@ const Dashboard = () => {
 						{/* staticCard section */}
 						<Grid
 							margin={2}
-							width={'34.2%'}
+							width={'23rem'}
 							item
 							xs={12}
 							md={6}
@@ -749,7 +749,7 @@ const Dashboard = () => {
 						{/* deposit-withdraw section */}
 						<Card
 							sx={{
-								width: '44.85rem',
+								width: '44rem',
 								marginLeft: '1rem',
 								display: 'flex',
 								justifyContent: 'space-between',

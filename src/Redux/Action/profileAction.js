@@ -11,7 +11,7 @@ export const getProfileData = () => {
 		return (dispatch) => {
 			axios
 				.get(
-					'https://iris-api.mycodelibraries.com/api/Profile/GetAllProfile',
+					'https://iris-api.mycodelibraries.com/api/Profile/GetAllProfile',	
 					auth
 				)
 				.then((res) => {

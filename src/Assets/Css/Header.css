@@ -1,7 +1,10 @@
 .header {
-	/* width: 69.35rem !important; */
+	width: 69.3rem !important;
 	height: 4rem !important;
-	margin: 0.5rem 0;
+	position: fixed !important;
+	z-index: 99;
+	padding-top: 1rem;
+	padding-bottom: 0.5rem;
 }
 .main-conatiner {
 	height: 100%;

@@ -300,7 +300,7 @@ const Albums = () => {
 												AlternativeName
 											</TableCell>
 											<TableCell>CreationDate</TableCell>
-											<TableCell>Filler1</TableCell>
+											{/* <TableCell>Filler1</TableCell> */}
 											<TableCell>Isrc</TableCell>
 											<TableCell>ReleaseDate</TableCell>
 											<TableCell>UmpgCode</TableCell>
@@ -343,11 +343,11 @@ const Albums = () => {
 																		'DD-MM-YYYY'
 																	)}
 																</TableCell>
-																<TableCell>
+																{/* <TableCell>
 																	{
 																		obj.filler1
 																	}
-																</TableCell>
+																</TableCell> */}
 																<TableCell>
 																	{obj.isrc}
 																</TableCell>
