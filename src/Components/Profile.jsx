@@ -155,6 +155,10 @@ const Profile = () => {
 		dispatch(getProfileData())
 	}, [dispatch])
 
+	useEffect(() => {
+		setFilteredData(profileData)
+	}, [profileData])
+
 	const handleFilter = (value) => {
 		console.log(value)
 		setSearchValue(value)
